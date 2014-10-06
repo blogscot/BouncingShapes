@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -11,22 +13,21 @@ public class ShapePanel extends JPanel {
 	Timer t;
 	private MyShape[] shapes;
 
-	public ShapePanel() {
+	public ShapePanel(MainProgram mp) {
 		shapes = new MyShape[0];
 		
-//		t=new Timer(10, new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				for(int i=0; i<shapes.length;i++){
-//					shapes[i].move(this.getWidth(), this.getHeight());
-//				}
-//				repaint();
-//			}
-//
-//		});
-//		t.start();
-//
+		t=new Timer(10, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				for(int i=0; i<shapes.length;i++){
+					shapes[i].move(mp.getWidth(), mp.getHeight());
+				}
+				repaint();
+			}
+		});
+		t.start();
+
 	}
 
 	public void addShape(MyShape shape) {

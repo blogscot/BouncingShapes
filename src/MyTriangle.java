@@ -16,6 +16,7 @@ public class MyTriangle extends MyShape{
 		this.height = height;
 	}
 
+	@Override
 	public void draw(Graphics g){
 		int pointNum = 0;
 
@@ -28,5 +29,18 @@ public class MyTriangle extends MyShape{
 		
 		Polygon p = new Polygon(xpoints, ypoints, npoints);
 		g.fillPolygon(p);
+	}
+	
+	public void move(int width, int height) {
+
+		if (x >= width - this.width || x <= 0) {
+			xspeed *= -1;
+		}
+		if (y >= height - this.height || y <= 0) {
+			yspeed *= -1;
+		}
+
+		x = x + (xspeed);
+		y = y + (yspeed);
 	}
 }

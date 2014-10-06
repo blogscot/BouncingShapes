@@ -1,6 +1,5 @@
 import java.awt.Graphics;
 
-
 public class MyCircle extends MyShape {
 
 	private int x, y, diameter;
@@ -11,8 +10,22 @@ public class MyCircle extends MyShape {
 		this.diameter = diameter;
 	}
 
+	@Override
 	public void draw(Graphics g){
 		g.fillOval(x, y, diameter/2, diameter/2);
 	}
 	
+	public void move(int width, int height) {
+
+		if (x >= width - diameter/2 || x <= 0) {
+			xspeed *= -1;
+		}
+		if (y >= height - diameter/2 || y <= 0) {
+			yspeed *= -1;
+		}
+
+		x = x + (xspeed);
+		y = y + (yspeed);
+	}
+
 }
