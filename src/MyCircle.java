@@ -15,6 +15,7 @@ public class MyCircle extends MyShape {
 		g.fillOval(x, y, diameter/2, diameter/2);
 	}
 	
+	@Override
 	public void move(int width, int height) {
 
 		if (x >= width - diameter/2 || x <= 0) {
@@ -24,8 +25,8 @@ public class MyCircle extends MyShape {
 			yspeed *= -1;
 		}
 
-		x = x + (xspeed);
-		y = y + (yspeed);
+		x += (xspeed);
+		y += (yspeed);
 	}
 
 }

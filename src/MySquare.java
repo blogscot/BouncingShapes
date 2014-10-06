@@ -15,6 +15,7 @@ public class MySquare extends MyShape{
 		g.fillRect(x, y, length, length);
 	}
 	
+	@Override
 	public void move(int width, int height) {
 
 		if (x >= width - length || x <= 0) {
@@ -24,8 +25,8 @@ public class MySquare extends MyShape{
 			yspeed *= -1;
 		}
 
-		x = x + (xspeed);
-		y = y + (yspeed);
+		x += (xspeed);
+		y += (yspeed);
 	}
 
 }

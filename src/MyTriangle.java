@@ -31,6 +31,7 @@ public class MyTriangle extends MyShape{
 		g.fillPolygon(p);
 	}
 	
+	@Override
 	public void move(int width, int height) {
 
 		if (x >= width - this.width || x <= 0) {
@@ -40,7 +41,7 @@ public class MyTriangle extends MyShape{
 			yspeed *= -1;
 		}
 
-		x = x + (xspeed);
-		y = y + (yspeed);
+		x += (xspeed);
+		y += (yspeed);
 	}
 }

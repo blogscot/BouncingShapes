@@ -15,6 +15,7 @@ public class MyRectangle extends MyShape {
 		g.fillRect(x, y, width, height);
 	}
 
+	@Override
 	public void move(int width, int height) {
 
 		if (x >= width - this.width || x <= 0) {
@@ -24,7 +25,7 @@ public class MyRectangle extends MyShape {
 			yspeed *= -1;
 		}
 
-		x = x + (xspeed);
-		y = y + (yspeed);
+		x += (xspeed);
+		y += (yspeed);
 	}
 }

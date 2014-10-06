@@ -46,6 +46,7 @@ public class ShapePanel extends JPanel {
 		// you are going to do this!
 	}
 
+	@Override
 	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
 		for (int i = 0; i < shapes.length; i++) {
