@@ -1,10 +1,11 @@
+package com.diamond.iain.shapes;
 import java.awt.Graphics;
 
-public class MyRectangle extends MyShape implements Flashable{
+public class Rectangle extends Shape implements Flashable{
 	private int count = 0;
 	private boolean isVisible = true;
 
-	public MyRectangle(int x, int y, int width, int height) {
+	public Rectangle(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;

@@ -1,6 +1,6 @@
+package com.diamond.iain.shapes;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -13,16 +13,16 @@ public class ShapePanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	Timer t;
-	private List<MyShape> myShapes;
+	private List<Shape> myShapes;
 	
 	public ShapePanel(MainProgram mp) {
-		myShapes = new ArrayList<MyShape>();
+		myShapes = new ArrayList<Shape>();
 		
 		t=new Timer(10, new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for (MyShape s : myShapes) {
+				for (Shape s : myShapes) {
 					s.move(mp.getWidth(), mp.getHeight());
 				}
 				repaint();
@@ -31,7 +31,7 @@ public class ShapePanel extends JPanel {
 		t.start();
 	}
 
-	public void addShape(MyShape shape) {
+	public void addShape(Shape shape) {
 		myShapes.add(shape);
 		repaint();
 	}
@@ -46,7 +46,7 @@ public class ShapePanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-		for (MyShape s : myShapes){
+		for (Shape s : myShapes){
 			g.setColor(Color.red);
 			s.draw(g);
 		}

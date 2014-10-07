@@ -1,14 +1,15 @@
+package com.diamond.iain.shapes;
 import java.awt.Graphics;
 import java.awt.Polygon;
 
 
-public class MyTriangle extends MyShape{
+public class Triangle extends Shape{
 	final int numberSides = 3;
 	final int[] xpoints = new int[numberSides];
 	final int[] ypoints = new int[numberSides];
 	final int npoints = numberSides;
 
-	public MyTriangle(int x, int y, int width, int height) {
+	public Triangle(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;

@@ -1,11 +1,12 @@
+package com.diamond.iain.shapes;
 import java.awt.Graphics;
 
-public class MySquare extends MyShape implements Flashable{
+public class Square extends Shape implements Flashable{
 
 	private int count = 0;
 	private boolean isVisible = true;
 
-	public MySquare(int x, int y, int length) {
+	public Square(int x, int y, int length) {
 		this.x = x;
 		this.y = y;
 		this.width = length;

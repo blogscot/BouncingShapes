@@ -1,6 +1,6 @@
+package com.diamond.iain.shapes;
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.util.Random;
 
 import javax.swing.JFrame;
 
@@ -8,7 +8,6 @@ public class MainProgram extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	ShapePanel shapePanel;
-	Random rnd = new Random();
 
 	public static void main(String[] args) {
 		MainProgram mp = new MainProgram();
@@ -22,16 +21,16 @@ public class MainProgram extends JFrame {
 	private void init() {
 
 		shapePanel = new ShapePanel(this);
-		MyCircle circle = new MyCircle(40, 40, 150);
+		Circle circle = new Circle(40, 40, 150);
 		shapePanel.addShape(circle);
 
-		MySquare square = new MySquare(140, 40, 70);
+		Square square = new Square(140, 40, 70);
 		shapePanel.addShape(square);
 
-		MyTriangle triangle = new MyTriangle(40, 140, 70, 70);
+		Triangle triangle = new Triangle(40, 140, 70, 70);
 		shapePanel.addShape(triangle);
 		
-		MyRectangle rectangle = new MyRectangle(140, 140, 140, 70);
+		Rectangle rectangle = new Rectangle(140, 140, 140, 70);
 		shapePanel.addShape(rectangle);
 
 		Container pane = this.getContentPane();
