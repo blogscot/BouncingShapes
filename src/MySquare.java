@@ -1,8 +1,11 @@
 import java.awt.Graphics;
 
-public class MySquare extends MyShape{
+public class MySquare extends MyShape implements Flashable{
 
-	private int x, y, length;
+	private int x, y;
+	private int length;
+	private int count = 0;
+	private boolean isVisible = true;
 
 	public MySquare(int x, int y, int length) {
 		this.x = x;
@@ -12,7 +15,13 @@ public class MySquare extends MyShape{
 
 	@Override
 	public void draw(Graphics g){
-		g.fillRect(x, y, length, length);
+		count++;
+		if (count%10==0) { isVisible = !isVisible; }
+		
+		if (isVisible)
+		{
+			g.fillRect(x, y, length, length);
+		}
 	}
 	
 	@Override

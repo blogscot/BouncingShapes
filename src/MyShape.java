@@ -1,6 +1,6 @@
 import java.awt.Graphics;
 
-public abstract class MyShape {
+public class MyShape {
 
 	public static int x = 0;
 	public static int y = 0;
@@ -16,14 +16,19 @@ public abstract class MyShape {
 
 	public void move(int width, int height) {
 
-		if (x >= width || x <= 0) {
+		if (x >= width - this.width || x <= 0) {
 			xspeed *= -1;
 		}
-		if (y >= height || y <= 0) {
+		if (y >= height - this.height|| y <= 0) {
 			yspeed *= -1;
 		}
 
-		x = x + (xspeed);
-		y = y + (yspeed);
+		x += (xspeed);
+		y += (yspeed);
+	}
+
+	@Override
+	public String toString() {
+		return "MyShape [xspeed=" + xspeed + ", yspeed=" + yspeed + "]";
 	}
 }

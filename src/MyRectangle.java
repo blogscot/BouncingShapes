@@ -1,7 +1,11 @@
 import java.awt.Graphics;
 
-public class MyRectangle extends MyShape {
-	private int x, y, width, height;
+public class MyRectangle extends MyShape implements Flashable{
+	private int x, y; 
+	private int width, height;
+	private int count = 0;
+	private boolean isVisible = true;
+
 
 	public MyRectangle(int x, int y, int width, int height) {
 		this.x = x;
@@ -12,7 +16,13 @@ public class MyRectangle extends MyShape {
 
 	@Override
 	public void draw(Graphics g) {
-		g.fillRect(x, y, width, height);
+		count++;
+		if (count%11==0) { isVisible = !isVisible; }
+		
+		if (isVisible)
+		{
+			g.fillRect(x, y, width, height);
+		}
 	}
 
 	@Override
