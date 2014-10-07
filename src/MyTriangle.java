@@ -3,10 +3,9 @@ import java.awt.Polygon;
 
 
 public class MyTriangle extends MyShape{
-	private int x, y, width, height;
 	final int numberSides = 3;
-	int[] xpoints = new int[numberSides];
-	int[] ypoints = new int[numberSides];
+	final int[] xpoints = new int[numberSides];
+	final int[] ypoints = new int[numberSides];
 	final int npoints = numberSides;
 
 	public MyTriangle(int x, int y, int width, int height) {
@@ -29,19 +28,5 @@ public class MyTriangle extends MyShape{
 		
 		Polygon p = new Polygon(xpoints, ypoints, npoints);
 		g.fillPolygon(p);
-	}
-	
-	@Override
-	public void move(int width, int height) {
-
-		if (x >= width - this.width || x <= 0) {
-			xspeed *= -1;
-		}
-		if (y >= height - this.height || y <= 0) {
-			yspeed *= -1;
-		}
-
-		x += (xspeed);
-		y += (yspeed);
 	}
 }

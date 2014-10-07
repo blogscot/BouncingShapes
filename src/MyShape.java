@@ -2,10 +2,10 @@ import java.awt.Graphics;
 
 public class MyShape {
 
-	public static int x = 0;
-	public static int y = 0;
-	public static int width = 0;
-	public static int height = 0;
+	protected int x = 0;
+	protected int y = 0;
+	protected int width = 0;
+	protected int height = 0;
 
 	protected int xspeed = 3;
 	protected int yspeed = 3;
