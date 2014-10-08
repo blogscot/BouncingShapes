@@ -10,7 +10,7 @@ public class MainProgram extends JFrame {
 
 	ShapePanel shapePanel;
 
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		MainProgram mp = new MainProgram();
 
 		mp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

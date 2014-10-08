@@ -1,7 +1,10 @@
 package com.diamond.iain.shapes;
 import java.awt.Graphics;
 
-public class Shape {
+// Abstract Shape class provides default state and behaviour for child classes
+// which may be extended or overridden. Making it abstract prevents some idiot
+// from trying to render it to the screen; what exactly does a 'shape' look like?
+public abstract class Shape {
 
 	protected int x = 0;
 	protected int y = 0;
@@ -26,10 +29,5 @@ public class Shape {
 
 		x += (xspeed);
 		y += (yspeed);
-	}
-
-	@Override
-	public String toString() {
-		return "MyShape [xspeed=" + xspeed + ", yspeed=" + yspeed + "]";
 	}
 }

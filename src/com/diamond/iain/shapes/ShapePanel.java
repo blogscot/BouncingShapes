@@ -17,7 +17,7 @@ public class ShapePanel extends JPanel {
 	private List<Shape> myShapes;
 
 	public ShapePanel(MainProgram mp) {
-		myShapes = new ArrayList<Shape>();
+		myShapes = new ArrayList<>();
 
 		t = new Timer(10, new ActionListener() {
 
