@@ -1,7 +1,8 @@
 package com.diamond.iain.shapes;
+
 import java.awt.Graphics;
 
-public class Square extends Shape implements Flashable{
+public class Square extends Shape implements Flashable {
 
 	private int count = 0;
 	private boolean isVisible = true;
@@ -13,13 +14,13 @@ public class Square extends Shape implements Flashable{
 		this.height = length;
 	}
 
-	@Override
-	public void draw(Graphics g){
+	public void flash(Graphics g) {
 		count++;
-		if (count%10==0) { isVisible = !isVisible; }
-		
-		if (isVisible)
-		{
+		if (count % 10 == 0) {
+			isVisible = !isVisible;
+		}
+
+		if (isVisible) {
 			g.fillRect(x, y, width, height);
 		}
 	}

@@ -1,4 +1,5 @@
 package com.diamond.iain.shapes;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 
@@ -29,7 +30,7 @@ public class MainProgram extends JFrame {
 
 		Triangle triangle = new Triangle(40, 140, 70, 70);
 		shapePanel.addShape(triangle);
-		
+
 		Rectangle rectangle = new Rectangle(140, 140, 140, 70);
 		shapePanel.addShape(rectangle);
 

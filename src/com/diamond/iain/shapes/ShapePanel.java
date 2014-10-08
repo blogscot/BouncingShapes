@@ -1,4 +1,5 @@
 package com.diamond.iain.shapes;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -14,12 +15,12 @@ public class ShapePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	Timer t;
 	private List<Shape> myShapes;
-	
+
 	public ShapePanel(MainProgram mp) {
 		myShapes = new ArrayList<Shape>();
-		
-		t=new Timer(10, new ActionListener() {
-			
+
+		t = new Timer(10, new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (Shape s : myShapes) {
@@ -37,7 +38,7 @@ public class ShapePanel extends JPanel {
 	}
 
 	public void removeShape(Shape s) {
-		if (myShapes.contains(s)){
+		if (myShapes.contains(s)) {
 			myShapes.remove(s);
 			repaint();
 		}
@@ -46,9 +47,13 @@ public class ShapePanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-		for (Shape s : myShapes){
+		for (Shape s : myShapes) {
 			g.setColor(Color.red);
-			s.draw(g);
+			if (s instanceof Flashable) {
+				((Flashable) s).flash(g);
+			} else {
+				s.draw(g);
+			}
 		}
 	}
 }
