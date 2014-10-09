@@ -14,18 +14,16 @@ public class ShapePanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	Timer t;
-	private List<Shape> myShapes;
+	private List<Shape> shapes;
 
 	public ShapePanel(MainProgram mp) {
-		myShapes = new ArrayList<>();
+		shapes = new ArrayList<>();
 
 		t = new Timer(10, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for (Shape s : myShapes) {
-					s.move(mp.getWidth(), mp.getHeight());
-				}
+				shapes.stream().forEach(s -> s.move(mp.getWidth(), mp.getHeight()));
 				repaint();
 			}
 		});
@@ -33,13 +31,13 @@ public class ShapePanel extends JPanel {
 	}
 
 	public void addShape(Shape shape) {
-		myShapes.add(shape);
+		shapes.add(shape);
 		repaint();
 	}
 
 	public void removeShape(Shape s) {
-		if (myShapes.contains(s)) {
-			myShapes.remove(s);
+		if (shapes.contains(s)) {
+			shapes.remove(s);
 			repaint();
 		}
 	}
@@ -47,13 +45,14 @@ public class ShapePanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-		for (Shape s : myShapes) {
-			g.setColor(Color.red);
+
+		shapes.stream().forEach(s -> {
+			g.setColor(Color.RED);
 			if (s instanceof Flashable) {
 				((Flashable) s).flash(g);
 			} else {
 				s.draw(g);
 			}
-		}
+		});
 	}
 }
