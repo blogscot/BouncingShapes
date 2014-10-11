@@ -13,7 +13,6 @@ import javax.swing.Timer;
 public class ShapePanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	Timer t;
 	private List<Shape> shapes;
 
 	public ShapePanel() {
