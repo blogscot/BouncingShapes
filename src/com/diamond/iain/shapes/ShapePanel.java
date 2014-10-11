@@ -16,18 +16,18 @@ public class ShapePanel extends JPanel {
 	Timer t;
 	private List<Shape> shapes;
 
-	public ShapePanel(MainProgram mp) {
+	public ShapePanel() {
 		shapes = new ArrayList<>();
 
-		t = new Timer(10, new ActionListener() {
+		new Timer(10, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				shapes.stream().forEach(s -> s.move(mp.getWidth(), mp.getHeight()));
+				shapes.stream().forEach(s -> 
+					s.move(ShapePanel.this.getWidth(), ShapePanel.this.getHeight()));
 				repaint();
 			}
-		});
-		t.start();
+		}).start();
 	}
 
 	public void addShape(Shape shape) {

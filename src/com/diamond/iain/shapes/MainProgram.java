@@ -21,7 +21,7 @@ public class MainProgram extends JFrame {
 
 	private void init() {
 
-		shapePanel = new ShapePanel(this);
+		shapePanel = new ShapePanel();
 		Circle circle = new Circle(40, 40, 150);
 		shapePanel.addShape(circle);
 
